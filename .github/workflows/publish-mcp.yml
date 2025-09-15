@@ -33,8 +33,10 @@ jobs:
       - name: Validate server.json schema
         run: |
           npm install -g ajv-cli
+          echo "Downloading schema..."
+          curl -s https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json > schema.json
           echo "Validating server configuration..."
-          ajv validate -s https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json -d server.json
+          ajv validate -s schema.json -d server.json
           echo "✅ Server configuration is valid!"
 
       - name: Install MCP Publisher
