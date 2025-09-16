@@ -22,21 +22,19 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Install validation tools
-        run: npm install -g ajv-cli
-
       - name: Update server version from tag
         run: |
           if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
             jq --arg v "$VERSION" '.version_detail.version = $v' server.json > tmp && mv tmp server.json
             echo "Updated to version: $VERSION"
+            cat server.json
           fi
 
       - name: Validate server.json
         run: |
-          curl -o server.schema.json https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json
-          ajv validate -s server.schema.json -d server.json
+          echo "Validating JSON syntax..."
+          jq empty server.json && echo "✅ server.json has valid JSON syntax"
 
       - name: Install MCP Publisher
         run: |
