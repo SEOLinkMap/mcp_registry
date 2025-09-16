@@ -1,18 +1,16 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
   "name": "io.github.SEOLinkMap/seolinkmap",
-  "description": "SEOLinkMap MCP server providing SERP-specific statistical SEO analysis, competitor research, and interactive site architecture visualization.",
+  "description": "SEOLinkMap MCP server for statistical SEO analysis and competitor research.",
   "version": "1.0.0",
   "remotes": [
     {
       "type": "sse",
-      "url": "https://seolinkmap.com/mcp",
-      "description": "Server-Sent Events transport for older MCP protocol versions"
+      "url": "https://seolinkmap.com/mcp"
     },
     {
       "type": "streamable-http",
-      "url": "https://seolinkmap.com/mcp",
-      "description": "Streamable HTTP transport for modern MCP protocol versions"
+      "url": "https://seolinkmap.com/mcp"
     }
   ]
 }
