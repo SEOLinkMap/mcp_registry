@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "io.github.seolinkmap/seolinkmap",
+  "name": "com.seolinkmap/seolinkmap",
   "description": "SEOLinkMap MCP server for statistical SEO analysis and competitor research.",
   "version": "1.0.0",
   "remotes": [
